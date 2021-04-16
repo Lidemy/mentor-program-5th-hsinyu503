@@ -15,5 +15,5 @@
 3. 確認自己在分支上後，進行 commit，下 git commit -am ‘message’ 指令
 4. 然後 push 上去 GitHub > 下 git push origin week1 指令
 5. 上 GitHub 按 pull request 將這個 branch 合併到 master 上就完成了
-6. 分支已創造好，但檔案有修改的話就是再創造一次 commit ，下 commit -am ‘message’
+6. 分支已創造好，但檔案有修改的話就是再創造一次 commit ，下 git commit -am ‘message’
    然後 push 上去 week1 分支，下 git push origin week1 指令就可以了
