@@ -9,8 +9,11 @@
 
 ### 上傳
 
-1.每次教作業就創造一個分支 git branch week1
-2.創造後切換到那個分支上 git checkout week1 (或更快速的可以使用 git checkout -b week1，一次作兩件事)
-3.確認自己在分支上後，進行 commit，下 git commit -am ‘message’ 指令
-4.然後 push 上去 GitHub > 下 git push origin week1 指令
-5.上 GitHub 按 pull request 將這個 branch 合併到 master 上
+1. 每次教作業就創造一個分支 git branch week1
+2. 創造後切換到那個分支上 git checkout week1
+   (或更快速的可以使用 git checkout -b week1，一次作兩件事)
+3. 確認自己在分支上後，進行 commit，下 git commit -am ‘message’ 指令
+4. 然後 push 上去 GitHub > 下 git push origin week1 指令
+5. 上 GitHub 按 pull request 將這個 branch 合併到 master 上就完成了
+6. 分支已創造好，但檔案有修改的話就是再創造一次 commit ，下 commit -am ‘message’
+   然後 push 上去 week1 分支，下 git push origin week1 指令就可以了
