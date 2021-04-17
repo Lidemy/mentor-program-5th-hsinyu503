@@ -10,7 +10,7 @@
 2. 瀏覽器送出 request 到 google 雲端 sever
 3. server 問 DB 資料庫，搜尋有含 JavaScript 的網頁
 4. DB 資料庫找到後，回傳 sever
-5. sever 回傳 response 給瀏覽器b搜尋結果，在 google 首頁前端顯示給你看
+5. sever 回傳 response 給瀏覽器搜尋結果，在 google 首頁前端顯示給你看
 
 ## 請列舉出 3 個「課程沒有提到」的 command line 指令並且說明功用
 
