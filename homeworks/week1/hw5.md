@@ -8,7 +8,7 @@
 
 1. 瀏覽器連上 google 首頁，你輸入 JavaScript
 2. 瀏覽器送出 request 到 google 雲端 sever
-3. server 問 DB 資料庫，搜尋有含 JavaScript 的網頁
+3. server 問 DB 資料庫，搜尋有含 JavaScript 的相關資料
 4. DB 資料庫找到後，回傳 sever
 5. sever 回傳 response 給瀏覽器搜尋結果，在 google 首頁前端顯示給你看
 
