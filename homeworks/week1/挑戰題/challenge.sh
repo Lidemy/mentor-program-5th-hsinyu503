@@ -4,11 +4,3 @@ do
   touch "${i}.js"
 done
 echo $2
-
-
-
-
-
-
-
-

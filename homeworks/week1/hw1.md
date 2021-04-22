@@ -1,11 +1,11 @@
 ## 交作業流程
 
 ### 把作業下載下來並寫作業
-第一次使用先把教作業的個人分支複製到本機 git clone 指令+網址
+第一次使用先把教作業的個人分支複製到本機 git clone 網址
 下載後就可以在本機寫作業 (修改檔案)
 
 進 Terminal 下 git status 指令可以看到該檔案被修改過
-下 git diff 指令可以進 vim 編輯器看
+下 git diff 指令可以開啟分頁看檔案內容
 
 ### 上傳
 
@@ -14,6 +14,6 @@
    (或更快速的可以使用 git checkout -b week1，一次作兩件事)
 3. 確認自己在分支上後，進行 commit，下 git commit -am ‘message’ 指令
 4. 然後 push 上去 GitHub > 下 git push origin week1 指令
-5. 上 GitHub 按 pull request 將這個 branch 合併到 master 上就完成了
+5. 上 GitHub 按 pull request 請求將這個 branch 合併到 master 上，待助教看過作業後 approved 這個請求後 merge 到 master 上
 6. 分支已創造好，但檔案有修改的話就是再創造一次 commit ，下 git commit -am ‘message’
    然後 push 上去 week1 分支，下 git push origin week1 指令就可以了
