@@ -5,7 +5,7 @@
 下載後就可以在本機寫作業 (修改檔案)
 
 進 Terminal 下 git status 指令可以看到該檔案被修改過
-下 git diff 指令可以進 vim 編輯器看
+下 git diff 指令進分頁畫面
 
 ### 上傳
 
