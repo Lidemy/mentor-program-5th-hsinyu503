@@ -27,7 +27,7 @@ function diditsCount(n) {
   if (n === 0) return 1
   let result = 0
   while (n !== 0) {
-    n = Math.floor(n / 0)
+    n = Math.floor(n / 10)
     result++
   }
   return result
