@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>lidemy5th restaurant</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1.0″>
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+  <style>
+    h2{
+      margin: 0px;
+    }
+    .navbar{
+      box-shadow: -1.4px -1.4px 6px 0 #971210;
+      padding: 0px 20px;
+    }
+    .navbar .wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      background-color: white;
+    }
+    .navbar_site_name{
+      color: #4e4e4e;
+      font-size: 36px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .navber_list{
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      font-size: 18px;
+    }
+    .navber_list li{
+      margin-left: 12px;
+      padding: 8px 18px;
+      transition: background 0.2s ease-in;
+    }
+    .navber_list li:hover{
+      border-bottom: 2px solid rgb(226, 83, 73);
+    }
+    .navber_list li a{
+      display: block;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      transition: background 0.2s ease-in;
+    }
+    .navber_list li a:hover{
+      color: gray;
+    }
+    .wrapper{
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0px 16px;
+    }
+    .banner{
+      background: url(image/ting-tian-E6DsqnZbZ4o-unsplash.jpg) center/cover no-repeat;
+      height: 600px;
+      width: 100%;
+      position: relative;
+    }
+    .banner::after{
+      content: '';
+      position: absolute;
+      background: rgba(0,0,0,0.2);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .banner h1{
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      margin: 0px;
+      color: #fff;
+      font-size: 48px;
+      font-family:serif;
+      letter-spacing: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .section{
+      text-align: center;
+    }
+    .section_title{
+      font-size: 32px;
+      font-family:serif;
+      color: rgb(150, 74, 74);
+      border-left: 5px solid rgb(241, 203, 132);
+      display: inline-block;
+      margin-top: 80px;
+      margin-bottom: 28px;
+      padding: 0px 16px;
+      text-align: center;
+    }
+    .section_desc{
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.5px;
+      color: rgb(163, 162, 162);
+    }
+    ..section_desc p{
+      line-height: 5px;
+      margin: 2px 0px;
+    }
+    .buttons{
+      margin-top: 60px;
+    }
+    .btn{
+      padding: 20px 50px;
+      margin: 0px 12px;
+      font-size: 18px;
+      display: inline-block;
+      border: 1px solid rgb(150, 74, 74);
+      border-radius: 40px;
+      transition: background 0.2s ease-in;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background-color: rgb(150, 74, 74);
+      color: white;
+    }
+    .section_images{
+      display: flex;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .section_images .item_image{
+      display: flex;
+      width: 100%;
+    }
+    .section_images .item_image img{
+      width: 100%;
+      transition: background 0.2s ease-in;
+    }
+    .comments{
+        display: flex;
+        width: 100%;
+      }
+    .item_comment{
+      display: flex;
+      position: relative;
+      width: 100%;
+      margin: 100px 8px 50px;
+      padding: 80px 22px 30px;
+      border-radius: 20px;
+      box-shadow: -3px 3px 10px 0 rgba(0,0,0, 0.2);
+    }
+    .sticker{
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .sticker_img{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .sticker_img img{
+      width: 100%;
+      height: 100%;
+    }
+    .sticker_name{
+      font-size: 14px;
+      margin-top: 10px;
+      color: rgb(175, 174, 174);
+      font-weight: 500;
+    }
+    .item_comment p{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-style: italic;
+      color: rgb(117, 117, 117);
+    }
+    footer{
+      margin-top: 120px;
+    }
+    .footer_top{
+      background-color: rgb(165, 165, 165);
+      padding-top: 60px ;
+      padding-bottom: 40px;
+    }
+    .footer_top .wrapper{
+      display: flex;
+      justify-content: space-between;
+      color: white;
+    }
+    .footer_top .footer_info{
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 30px;
+    }
+    .footer_sns{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      padding: 30px 0px;
+    }
+    .footer_sns_logo{
+      font-size: 32px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .footer_sns_links{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .footer_bottom{
+      background-color: black;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      padding: 20px 0px;
+    }
+    @media(max-width: 768px){
+      .navbar .wrapper{
+        height: 120px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px;
+      }
+      .navbar_site_name{
+        margin-top: 10px;
+        margin-bottom: 6px;
+      }
+      .navber_list{
+        display: flex;
+        width: 100%;
+      }
+      .navber_list li{
+        flex: 1;
+        margin-left: 0px;
+      }
+      .banner{
+        height: 400px;
+      }
+      .banner h1{
+        font-size: 32px;
+      }
+      .section_desc{
+        padding: 0px 30px;
+      }
+      .section_images{
+        flex-wrap: wrap;
+      }
+      .section_images .item_image{
+        width: 50%;
+      }
+      .comments{
+        flex-wrap: wrap;
+      }
+      .item_comment{
+        margin: 60px 40px 20px;
+      }
+      .footer_top .wrapper{
+        flex-wrap: wrap;
+      }
+      .footer_sns{
+        margin-top: 30px;
+      }
+      .footer_sns_logo,.footer_sns_links{
+        justify-content: flex-start;
+      }
+    }
+    @media(max-width: 500px) {
+      .btn{
+        display: block;
+        margin: 20px 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="wrapper">
+      <div class="navbar_site_name">
+        Just A Bite!
+      </div>
+      <ul class="navber_list">
+        <li><a href="">抽個大獎</a></li>
+        <li><a href="">我要點餐</a></li>
+        <li><a href="">查詢訂單</a></li>
+        <li><a href="">常見問題</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="banner">
+    <h1>咬一口廚房</h1>
+  </section>
+  <div class="wrapper">
+    <section class="section">
+      <h2 class="section_title">當輕食之風盛起</h2>
+      <div class="section_desc">
+        <p>由於現代人生活忙碌，常以外食為主，當高糖、高鹽、高油成為人們的日常，會導致慢性疾病與肥胖的機率大增</p>
+        <p>我們定期走訪農田，選用最天然、營養的食材，以簡單的烹調方式處理，最大化忠實呈現食材原本的鮮味</p>
+        <p>咬一口不只賣餐點，我們希望能夠讓大家愛上料理的魅力，餐館特意打造全開放式廚房，烹調透明化</p>
+        <p>也不定時舉辦美食廚房DIY，讓大家體驗不需要過多調味，就能擁有千變萬化的食物口感</p>
+      </div>
+      <div class="buttons">
+        <div class="btn">我要點餐</div>
+        <div class="btn">查詢訂單</div>
+      </div>
+    </section>
+  </div>
+  <section class="section">
+    <h2 class="section_title">Menu</h2>
+    <div class="section_images">
+      <div class="item_image"><img src="image/menu_image_01.jpg" alt=""></div>
+      <div class="item_image"><img src="image/menu_image_02.jpg" alt=""></div>
+      <div class="item_image"><img src="image/menu_image_03.jpg" alt=""></div>
+      <div class="item_image"><img src="image/menu_image_04.jpg" alt=""></div>
+    </div>
+  </section>
+  <div class="wrapper">
+    <div class="section">
+      <h2 class="section_title">吃過都說好</h2>
+      <div class="comments">
+        <div class="item_comment">
+          <div class="sticker">
+            <div class="sticker_img"">
+              <img src="image/people01.jpeg" alt="">
+            </div>
+            <div class="sticker_name">Brad</div>
+          </div>
+          <p>Definitely a fastfood that I’d enjoy and go back again for more delicious burgers</p>
+        </div>
+        <div class="item_comment">
+          <div class="sticker">
+            <div class="sticker_img">
+              <img src="image/people02.jpeg" alt="">
+            </div>
+            <div class="sticker_name">Scarlett</div>
+          </div>
+          <p>Great food, service, and really an excellent park setting.</p>
+        </div>
+        <div class="item_comment">
+          <div class="sticker">
+            <div class="sticker_img">
+              <img src="image/people03.jpeg" alt="">
+            </div>
+            <div class="sticker_name">Robert</div>
+          </div>
+          <p>Line was insane to order and had to wait 30 min before order was ready but well worth it..burger and fries were great!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+    <section class="section">
+      <h2 class="section_title">Map</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12091.704690460887!2d-73.988132!3d40.74165!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84ac8a2dc2535dc2!2sShake%20Shack!5e0!3m2!1szh-TW!2stw!4v1621781120324!5m2!1szh-TW!2stw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+  </div>
+  <footer>
+    <div class="footer_top">
+      <div class="wrapper">
+        <div class="footer_info">
+          <div>餐館地址: 天上地下天堂路三分之一里六段520號</div>
+          <div>訂位專線：02-1314-5566</div>
+          <div>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+          <div>email：service@justabite.com.tw</div>
+        </div>
+        <div class="footer_sns">
+          <div class="footer_sns_logo">Just A Bite!</div>
+          <div class="footer_sns_links">Facebook / Instagram / Youtube</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有</div>
+  </footer>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
