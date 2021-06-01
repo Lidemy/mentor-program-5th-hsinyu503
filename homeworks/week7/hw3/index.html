@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>lidemy5th restaurant</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+  <style>
+    body{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 28px;
+      background-color: rgb(15, 15, 15);
+      display: flex;
+      padding: 40px;
+    }
+    h1{
+      font-size: 72px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .wrapper{
+      max-width: 600px;
+      border: 1px solid black;
+      margin: 60px auto;
+      padding: 60px 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      background-color: rgb(238, 237, 237);
+    }
+    .enter{
+      width: 100%;
+      display: flex;
+    }
+    ::placeholder{
+      color: rgb(218, 218, 218);
+      font-size: 28px;
+    }
+    .input_todo{
+      width: 100%;
+      height: 30px;
+      display: flex;
+      padding: 10px 10px 5px;
+      font-size: 28px;
+    }
+    .btn_new{
+      background-color: rgb(73, 10, 247);
+      color: honeydew;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .todos{
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    .todo{
+      display: flex;
+      width: 100%;
+      align-items: center;
+      margin-top: 12px;
+      padding: 12px;
+      transition: background 0.3s ease-in;
+      background-color: rgba(205, 252, 36, 0.938);
+    }
+    .todo:hover{
+      background-color: rgba(182, 224, 30, 0.938);
+    }
+    .todo_title{
+      flex: 1;
+    }
+    .todo_check{
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+    }
+    .todo.done .todo_title{
+      text-decoration: line-through;
+    }
+    .btn_delete{
+      background-color: #fff;
+    }
+    .desc{
+      font-size: 15px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    @media (max-width: 768px){
+      body{
+        padding: 20px;
+      }
+      h1{
+      font-size: 50px;
+      }
+      .wrapper{
+        width: 100%;
+        max-width: 500px;
+      }
+      .input_todo{
+      height: 20px;
+      padding: 10px;
+      font-size: 16px;
+    }
+      ::placeholder{
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 600px){
+      .wrapper{
+        width: 100%;
+        max-width: 300px;
+      }
+      h1{
+      font-size: 30px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>todayToDo</h1>
+    <div class="enter">
+      <input type="text" class="input_todo" placeholder="Add something to do here"><button class="btn_new">+</button>
+    </div>
+    <div class="todos">
+    </div>
+    <div class="desc">everyday_is_a_new_beginning</div>
+  </div>
+
+  <script>
+
+    document.querySelector('.btn_new').addEventListener('click',
+      function(){
+        const value = document.querySelector('.input_todo').value;
+        if(!value) return
+        const div = document.createElement('div')
+        div.classList.add('todo')
+        div.innerHTML = `
+          <input type="checkbox" class="todo_check">
+          <div class="todo_title">${escapeHtml(value)}</div>
+          <button class="btn_delete">X</button>
+        `
+        document.querySelector('.todos').appendChild(div)
+        document.querySelector('.input_todo').value = ''
+    });
+
+    document.querySelector('.todos').addEventListener('click',
+      function(event){
+        const { target } = event
+        if(target.classList.contains('btn_delete')){
+          target.parentNode.remove()
+          return
+        }
+
+        if(target.classList.contains('todo_check')){
+          if(target.checked){
+            target.parentNode.classList.add('done')
+          } else {
+            target.parentNode.classList.remove('done')
+          }
+        }
+    })
+
+    function escapeHtml(unsafe) {
+      return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+</html>

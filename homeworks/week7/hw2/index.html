@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>lidemy5th restaurant</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+  <style>
+    h2{
+      margin: 0px;
+    }
+    .navbar{
+      box-shadow: -1.4px -1.4px 6px 0 #971210;
+      padding: 0px 20px;
+    }
+    .navbar .wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      background-color: white;
+    }
+    .navbar_site_name{
+      color: #4e4e4e;
+      font-size: 36px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .navber_list{
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      font-size: 18px;
+    }
+    .navber_list li{
+      margin-left: 12px;
+      padding: 8px 18px;
+      border-bottom: 2px solid rgb(255, 255, 255);
+      transition: background 0.2s ease-in;
+    }
+    .navber_list li:hover{
+      border-bottom: 2px solid rgb(226, 83, 73);
+    }
+    .navber_list li a{
+      display: block;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+    .navber_list li a:hover{
+      color: gray;
+    }
+    .wrapper{
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0px 16px;
+    }
+    .banner{
+      background: url(image/ting-tian-E6DsqnZbZ4o-unsplash.jpg) center/cover no-repeat;
+      height: 600px;
+      width: 100%;
+      position: relative;
+    }
+    .banner::after{
+      content: '';
+      position: absolute;
+      background: rgba(0,0,0,0.2);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .banner h1{
+      display: inline-block;
+      position: relative;
+      z-index: 2;
+      margin: 0px;
+      color: #fff;
+      font-size: 48px;
+      font-family:serif;
+      letter-spacing: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .section{
+      text-align: center;
+    }
+    .section_title{
+      font-size: 32px;
+      font-family:serif;
+      color: rgb(150, 74, 74);
+      border-left: 5px solid rgb(241, 203, 132);
+      display: inline-block;
+      margin-top: 80px;
+      margin-bottom: 28px;
+      padding: 0px 16px;
+      text-align: center;
+    }
+    .section_desc{
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 20px;
+      letter-spacing: 0.5px;
+      color: rgb(163, 162, 162);
+    }
+    .section_desc p{
+      line-height: 20px;
+      margin: 2px 0px;
+    }
+    .buttons{
+      margin-top: 60px;
+    }
+    .btn{
+      padding: 20px 50px;
+      margin: 0px 12px;
+      font-size: 18px;
+      display: inline-block;
+      border: 1px solid rgb(150, 74, 74);
+      border-radius: 40px;
+      transition: background 0.2s ease-in;
+      cursor: pointer;
+    }
+    .btn:hover{
+      background-color: rgb(150, 74, 74);
+      color: white;
+    }
+    .section_images{
+      display: flex;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .section_images .item_image{
+      display: flex;
+      width: 100%;
+    }
+    .section_images .item_image img{
+      width: 100%;
+      transition: background 0.2s ease-in;
+    }
+    .comments{
+        display: flex;
+        width: 100%;
+      }
+    .item_comment{
+      display: flex;
+      position: relative;
+      width: 100%;
+      margin: 100px 8px 50px;
+      padding: 80px 22px 30px;
+      border-radius: 20px;
+      box-shadow: -3px 3px 10px 0 rgba(0,0,0, 0.2);
+    }
+    .sticker{
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .sticker_img{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .sticker_img img{
+      width: 100%;
+      height: 100%;
+    }
+    .sticker_name{
+      font-size: 14px;
+      margin-top: 10px;
+      color: rgb(175, 174, 174);
+      font-weight: 500;
+    }
+    .item_comment p{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-style: italic;
+      color: rgb(117, 117, 117);
+    }
+    footer{
+      margin-top: 120px;
+    }
+    .footer_top{
+      background-color: rgb(165, 165, 165);
+      padding-top: 60px ;
+      padding-bottom: 40px;
+    }
+    .footer_top .wrapper{
+      display: flex;
+      justify-content: space-between;
+      color: white;
+    }
+    .footer_top .footer_info{
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 30px;
+    }
+    .footer_sns{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      padding: 30px 0px;
+    }
+    .footer_sns_logo{
+      font-size: 32px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      cursor: pointer;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .footer_sns_links{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .footer_bottom{
+      background-color: black;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      padding: 20px 0px;
+    }
+    .faq_block{
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    .faq_hide{
+      height: 24px;
+    }
+    .faq_item{
+      display: flex;
+      border-bottom: 2px solid rgb(231, 219, 183);
+      padding-bottom: 15px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .faq_item:not(:first-child){
+      margin-top: 24px;
+    }
+    .faq_item_number{
+      color: rgb(241, 203, 132);
+      font-size: 24px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin-right: 20px;
+    }
+    .faq_item_content{
+      text-align: left;
+    }
+    .faq_item_content h2{
+      font-size: 18px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      color: gray;
+      line-height: 30px;
+    }
+    .faq_item_content p{
+      font-size: 15px;
+      color: rgb(95, 95, 95);
+      line-height: 26px;
+    }
+    @media(max-width: 768px){
+      .navbar .wrapper{
+        height: 120px;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0px;
+      }
+      .navbar_site_name{
+        margin-top: 16px;
+        margin-bottom: 6px;
+      }
+      .navber_list{
+        display: flex;
+        width: 100%;
+      }
+      .navber_list li{
+        flex: 1;
+        margin-left: 0px;
+      }
+      .banner{
+        height: 400px;
+      }
+      .banner h1{
+        font-size: 32px;
+      }
+      .section_desc{
+        padding: 0px 30px;
+      }
+      .section_images{
+        flex-wrap: wrap;
+      }
+      .section_images .item_image{
+        width: 50%;
+      }
+      .comments{
+        flex-wrap: wrap;
+      }
+      .item_comment{
+        margin: 60px 40px 20px;
+      }
+      .footer_top .wrapper{
+        flex-wrap: wrap;
+      }
+      .footer_sns{
+        margin-top: 30px;
+      }
+      .footer_sns_logo,.footer_sns_links{
+        justify-content: flex-start;
+      }
+    }
+    @media(max-width: 500px) {
+      .btn{
+        display: block;
+        margin: 20px 45px;
+      }
+      .navber_list li{
+      margin-left: 2px;
+      padding: 8px 8px 2px;
+      }
+      .navber_list li a{
+      font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="wrapper">
+      <div class="navbar_site_name">
+        Just A Bite!
+      </div>
+      <ul class="navber_list">
+        <li><a href="">抽個大獎</a></li>
+        <li><a href="">我要點餐</a></li>
+        <li><a href="">查詢訂單</a></li>
+        <li><a href="">常見問題</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="wrapper">
+    <section class="section">
+      <h2 class="section_title">FAQ - 常見問題</h2>
+      <div class="faq_block">
+        <div class="faq_item faq_hide">
+          <div class="faq_item_number">Q1</div>
+          <div class="faq_item_content">
+            <h2>請問用餐需要事先訂位嗎？</h2>
+            <p>為了滿足顧客多方面的需求，並將訂位服務做到最好，我們開放一個月內的訂位，建議您可以直接撥打各分店服務專線，越早預約越有機會選擇您想要的用餐時間喔！各分店預約訂位專線詳見『門市據點一覽表』 (特殊節日開放訂位時間會另行公佈)</p>
+          </div>
+        </div>
+        <div class="faq_item faq_hide">
+          <div class="faq_item_number">Q2</div>
+          <div class="faq_item_content">
+            <h2>請問過年有營業嗎？</h2>
+            <p>只有除夕當天的時間會另行發佈於官網，其餘時間都正常營業。</p>
+          </div>
+        </div>
+        <div class="faq_item faq_hide">
+          <div class="faq_item_number">Q3</div>
+          <div class="faq_item_content">
+            <h2>請問有附設停車場嗎？</h2>
+            <p>目前大部分店家都位於百貨或商場內，皆有附設停車場，也建議搭乘大眾交通運輸工具前往。</p>
+          </div>
+        </div>
+        <div class="faq_item faq_hide">
+          <div class="faq_item_number">Q4</div>
+          <div class="faq_item_content">
+            <h2>請問可以攜帶寵物用餐嗎？</h2>
+            <p>寵物需放置於提籃中，導盲犬可隨同入內用餐，需事先與服務人員告知，以便為您安排適當的座位。</p>
+          </div>
+        </div>
+        <div class="faq_item faq_hide">
+          <div class="faq_item_number">Q5</div>
+          <div class="faq_item_content">
+            <h2>請問消費可以刷卡嗎？</h2>
+            <p>各店皆有提供刷卡服務。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <div class="footer_top">
+      <div class="wrapper">
+        <div class="footer_info">
+          <div>餐館地址: 天上地下天堂路三分之一里六段520號</div>
+          <div>訂位專線：02-1314-5566</div>
+          <div>營業時間：週一〜週五 09:00~18:00 / 週六、週日、國定假日（含連假）休息</div>
+          <div>email：service@justabite.com.tw</div>
+        </div>
+        <div class="footer_sns">
+          <div class="footer_sns_logo">Just A Bite!</div>
+          <div class="footer_sns_links">Facebook / Instagram / Youtube</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">Copyright © 2020 Just A Bite All Rights Reserved. 咬一口股份有限公司版權所有</div>
+  </footer>
+  <script>
+    document
+      .querySelector('.faq_block')
+      .addEventListener('click',function(e){
+        const element = e.target.closest('.faq_item')
+        if(element){
+          element.classList.toggle('faq_hide')
+        }
+      });
+  </script>
+</body>
+</html>
